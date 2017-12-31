@@ -12,13 +12,18 @@
 	<body>
 		<h1>D&D Map Generator</h1>
         <div id="controls">
+			<select name="generation_method">
+				<option value="none">Select a generation method</option>
+				<option value="cellular_automaton">Cellular Automaton</option>
+				<option value="cellular_automaton">Perlin Noise</option>
+			</select>
 			<p>Width:</p>
 			<input id="width" type="text" name="width" placeholder="1000"></input>
 			<p>Height:</p>
 			<input id="height" type="text" name="height" placeholder="1000"></input>
 			<p>Pixels per square:</p>
 			<input id="pixels_per_square" type="text" name="pixelsPerSquare" placeholder="25"></input>
-			<input type="button" name="build" value="Build" onclick="refreshValues();createGrid()"></input>
+			<input type="button" name="build" value="Build" onclick="refreshValues();randomizeGrid()"></input>
 		</div>
 		<svg id="drawing_board" width="1000" height="1500" onload="refreshValues();createGrid()"></svg>
 		
