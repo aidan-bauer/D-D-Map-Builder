@@ -1,31 +1,33 @@
 <!DOCTYPE HTML>
-<html land="en">
+<html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="A web application for procedurally generating D&D maps.">
+		<meta name="description" content="A web application for procedurally generating D&amp;D maps.">
 		<meta name="author" content="MedicOnDuty">
-		<title>D&D Map Builder</title>
+		<title>D&amp;D Map Builder</title>
 		
-        <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/seedrandom.min.js"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/seedrandom.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script scr="js/cellular_automata.js"></script>
 		<link href="css/global_styles.css">
 	</head>
 	<body>
-		<h1>D&D Map Generator</h1>
+		<h1>D&amp;D Map Generator</h1>
         <div id="controls">
 			<select name="generation_method">
 				<option value="none">Select a generation method</option>
 				<option value="cellular_automaton">Cellular Automaton</option>
 				<option value="cellular_automaton">Perlin Noise</option>
 			</select>
-			<p>Width:</p>
-			<input id="width" type="text" name="width" placeholder="1000"></input>
-			<p>Height:</p>
-			<input id="height" type="text" name="height" placeholder="1000"></input>
-			<p>Pixels per square:</p>
-			<input id="pixels_per_square" type="text" name="pixelsPerSquare" placeholder="25"></input>
-			<input type="button" name="build" value="Build" onclick="refreshValues();randomizeGrid()"></input>
+			<span>Width:</span>
+			<input id="width" type="text" name="width" placeholder="1000">
+			<span>Height:</span>
+			<input id="height" type="text" name="height" placeholder="1000">
+			<span>Pixels per square:</span>
+			<input id="pixels_per_square" type="text" name="pixelsPerSquare" placeholder="25">
+			<input type="button" id="build" name="build" value="Build">
 		</div>
-		<svg id="drawing_board" width="1000" height="1500" onload="refreshValues();createGrid()"></svg>
+		<canvas id="drawing_board" width="1000" height="1000" onload="createGrid()"></canvas>
 		
 		<script src="js/grid_builder.js"></script>
 	</body>
