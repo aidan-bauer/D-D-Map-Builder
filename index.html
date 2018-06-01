@@ -8,17 +8,18 @@
 		
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/seedrandom.min.js"></script>-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/voronoi.js"></script>
 		<script scr="js/cellular_automata.js"></script>
 		<link href="css/global_styles.css">
 	</head>
 	<body>
 		<h1>D&amp;D Map Generator</h1>
         <div id="controls">
-			<select name="generation_method">
+			<!--<select name="generation_method">
 				<option value="none">Select a generation method</option>
 				<option value="cellular_automaton">Cellular Automaton</option>
 				<option value="cellular_automaton">Perlin Noise</option>
-			</select>
+			</select>-->
 			<span>Width:</span>
 			<input id="width" type="text" name="width" placeholder="1000">
 			<span>Height:</span>
@@ -27,7 +28,7 @@
 			<input id="pixels_per_square" type="text" name="pixelsPerSquare" placeholder="25">
 			<input type="button" id="build" name="build" value="Build">
 		</div>
-		<canvas id="drawing_board" width="1000" height="1000" onload="createGrid()"></canvas>
+		<canvas id="drawing_board" width="1000" height="1000"></canvas>
 		
 		<script src="js/grid_builder.js"></script>
 	</body>

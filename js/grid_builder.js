@@ -38,7 +38,7 @@
 		mapHeight = textInputValue(height);
 	}
 
-	buildBtn.onclick = function createGrid() {
+	function createGrid() {
 		console.log("generating grid");
 		ctx.strokeStyle = "#b3b3b375";
 		
@@ -56,4 +56,8 @@
 			ctx.stroke();
 		}
 	}
+	
+	buildBtn.onclick = createGrid();
+	
+	createGrid();
 })();
